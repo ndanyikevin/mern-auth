@@ -3,6 +3,8 @@ import mongoose from "mongoose";
 import { MongoClient } from "mongodb";
 import dotenv from 'dotenv'
 
+import userRoutes from './routes/user.route.js'
+
 dotenv.config();
 const uri = process.env.MONGO
 
@@ -26,3 +28,4 @@ app.listen(3000, ()=> {
     console.log('Servey listening on port 3000')
 })
 
+app.use("/api/user", userRoutes)
